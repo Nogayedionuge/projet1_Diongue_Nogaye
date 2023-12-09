@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `ecom1_project`
 --
-
+USE projet_commerce_nogaye_db;
 -- --------------------------------------------------------
 
 --
