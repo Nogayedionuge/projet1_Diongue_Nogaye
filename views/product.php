@@ -1,7 +1,14 @@
 <?php
 
 require __DIR__ . '/header.php'; 
+require __DIR__ . '/config/connect-db.php';
 
+$products;
+$statement = $pdo->prepare("SELECT * FROM product");
+$statement->execute();
+if($statement->rowCount() > 0) {
+    $products = $statement->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
   <!-- product section -->
 
@@ -13,268 +20,60 @@ require __DIR__ . '/header.php';
         </h2>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p1.png" alt="">
-              <a href="" class="add_cart_btn">
-                <span>
-                  Add To Cart
-                </span>
-              </a>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Product Name
-              </h5>
-              <div class="product_info">
-                <h5>
-                  <span>$</span> 300
-                </h5>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
+      <?php 
+      if(isset($products)){
+        foreach($products as $product){
+         
+          ?>
+            
+            
+              <div class="col-sm-6 col-lg-4">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="views/images/<?= $product['img_url'] ?>" alt="">
+                    <a href="" class="add_cart_btn">
+                      <span>
+                        Add To Cart
+                      </span>
+                    </a>
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                    <?= htmlspecialchars($product['name']) ?>
+                    </h5>
+                    <div class="product_info">
+                      <h5>
+                        <span>$</span> <?= number_format($product['price'], 2) ?>
+                      </h5>
+                      <div class="star_container">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            
+        <?php 
+        }
+        ?>
         </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p2.png" alt="">
-              <a href="" class="add_cart_btn">
-                <span>
-                  Add To Cart
-                </span>
-              </a>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Product Name
-              </h5>
-              <div class="product_info">
-                <h5>
-                  <span>$</span> 300
-                </h5>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="btn_box">
+            <a href="<?php echo $base_path ?>/?product" class="view_more-link">
+              View More
+            </a>
         </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p3.png" alt="">
-              <a href="" class="add_cart_btn">
-                <span>
-                  Add To Cart
-                </span>
-              </a>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Product Name
-              </h5>
-              <div class="product_info">
-                <h5>
-                  <span>$</span> 300
-                </h5>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p4.png" alt="">
-              <a href="" class="add_cart_btn">
-                <span>
-                  Add To Cart
-                </span>
-              </a>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Product Name
-              </h5>
-              <div class="product_info">
-                <h5>
-                  <span>$</span> 300
-                </h5>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p5.png" alt="">
-              <a href="" class="add_cart_btn">
-                <span>
-                  Add To Cart
-                </span>
-              </a>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Product Name
-              </h5>
-              <div class="product_info">
-                <h5>
-                  <span>$</span> 300
-                </h5>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p6.png" alt="">
-              <a href="" class="add_cart_btn">
-                <span>
-                  Add To Cart
-                </span>
-              </a>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Product Name
-              </h5>
-              <div class="product_info">
-                <h5>
-                  <span>$</span> 300
-                </h5>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p7.png" alt="">
-              <a href="" class="add_cart_btn">
-                <span>
-                  Add To Cart
-                </span>
-              </a>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Product Name
-              </h5>
-              <div class="product_info">
-                <h5>
-                  <span>$</span> 300
-                </h5>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p8.png" alt="">
-              <a href="" class="add_cart_btn">
-                <span>
-                  Add To Cart
-                </span>
-              </a>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Product Name
-              </h5>
-              <div class="product_info">
-                <h5>
-                  <span>$</span> 300
-                </h5>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/p9.png" alt="">
-              <a href="" class="add_cart_btn">
-                <span>
-                  Add To Cart
-                </span>
-              </a>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Product Name
-              </h5>
-              <div class="product_info">
-                <h5>
-                  <span>$</span> 300
-                </h5>
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php
+      }else{?>
+        <p>Aucun Produit disponible</p>
+      <?php 
+      }
+      ?>
+        
+    </div>
     </div>
   </section>
 
