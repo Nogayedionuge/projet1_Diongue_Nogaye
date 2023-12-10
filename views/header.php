@@ -71,7 +71,7 @@ $base_path = "/projet1_Diongue_Nogaye"
                   My Account
                 </span>
               </a>
-              <a href="" class="cart-link">
+              <a href="<?php echo $base_path ?>?cart" class="cart-link">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 <span>
                   Cart

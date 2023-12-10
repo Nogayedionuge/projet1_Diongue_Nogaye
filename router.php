@@ -25,6 +25,11 @@ function detailPage()
 {
     require __DIR__ . '/views/detail.php';
 }
+
+function cartPage()
+{
+    require __DIR__ . '/views/cart.php';
+}
 // Get the requested URL
 $requestUri = explode("/projet1_Diongue_Nogaye", $_SERVER['REQUEST_URI'])[1];
 
@@ -37,6 +42,8 @@ if(isset($_GET["product"])){
     whyPage();
 }else if(isset($_GET["detail"])){
     detailPage();
+}else if(isset($_GET["cart"])){
+    cartPage();    
 }else{
     homePage();
 }

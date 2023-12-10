@@ -34,7 +34,7 @@ if($statement->rowCount() > 0) {
             </p>
             <div class="info_section">
                 <div class="single-product-details info_form">
-                    <form action="/cart?id=<?= htmlspecialchars($product[0]['id']) ?>" method="post">
+                    <form action="<?php echo $base_path ?>?cart=<?= htmlspecialchars($product[0]['id']) ?>" method="post">
                         <p class="product-price">Price:  $<?= number_format($product[0]['price'], 2) ?></p>
                         <div class="product-quantity">
                             <span>Quantity:</span>
