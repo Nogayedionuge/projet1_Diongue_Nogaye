@@ -5,7 +5,7 @@ require __DIR__ . '/header.php';
 ?>
   <!-- about section -->
 
-  <section class="about_section">
+  <section class="about_section layout_padding">
     <div class="container-fluid  ">
       <div class="row">
         <div class="col-md-5 ml-auto">

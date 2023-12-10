@@ -275,11 +275,6 @@ require __DIR__ . '/header.php';
           </div>
         </div>
       </div>
-      <div class="btn_box">
-        <a href="" class="view_more-link">
-          View More
-        </a>
-      </div>
     </div>
   </section>
 
