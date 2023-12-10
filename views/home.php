@@ -66,7 +66,7 @@ if($statement->rowCount() > 0) {
                     <img src="views/images/<?= $product['img_url'] ?>" alt="">
                     <a href="" class="add_cart_btn">
                       <span>
-                        Add To Cart
+                        View Product
                       </span>
                     </a>
                   </div>

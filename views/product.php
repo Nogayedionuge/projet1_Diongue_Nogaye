@@ -25,15 +25,13 @@ if($statement->rowCount() > 0) {
         foreach($products as $product){
          
           ?>
-            
-            
               <div class="col-sm-6 col-lg-4">
                 <div class="box">
                   <div class="img-box">
                     <img src="views/images/<?= $product['img_url'] ?>" alt="">
-                    <a href="" class="add_cart_btn">
+                    <a href="<?php echo $base_path ?>?detail=<?php echo $product['id'] ?>" class="add_cart_btn">
                       <span>
-                        Add To Cart
+                        View Product
                       </span>
                     </a>
                   </div>
@@ -62,7 +60,7 @@ if($statement->rowCount() > 0) {
         ?>
         </div>
         <div class="btn_box">
-            <a href="<?php echo $base_path ?>/?product" class="view_more-link">
+            <a href="<?php echo $base_path ?>?product" class="view_more-link">
               View More
             </a>
         </div>

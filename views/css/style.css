@@ -783,4 +783,8 @@ a:focus {
   color: inherit;
 }
 
+.rowflex {
+  justify-content: space-around;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -101,13 +101,13 @@ $base_path = "/projet1_Diongue_Nogaye"
                   <a class="nav-link" href="<?php echo $base_path ?>/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo $base_path ?>/?product" >Products</a>
+                  <a class="nav-link" href="<?php echo $base_path ?>?product" >Products</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo $base_path ?>/?why">Why Us</a>
+                  <a class="nav-link" href="<?php echo $base_path ?>?why">Why Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="<?php echo $base_path ?>/?about"> About</a>
+                  <a class="nav-link" href="<?php echo $base_path ?>?about"> About</a>
                 </li>
               </ul>
             </div>
