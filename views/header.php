@@ -65,7 +65,7 @@ $base_path = "/projet1_Diongue_Nogaye"
               </button>
             </from>
             <div class="user_option_box">
-              <a href="" class="account-link">
+              <a href="" class="account-link" data-bs-toggle="modal" data-bs-target="#ModalForm">
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <span>
                   My Account
@@ -116,3 +116,4 @@ $base_path = "/projet1_Diongue_Nogaye"
       </div>
     </header>
     <!-- end header section -->
+    <?php require __DIR__ . '/login/signin.php'; ?>

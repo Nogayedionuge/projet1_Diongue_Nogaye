@@ -741,7 +741,8 @@ a:focus {
   padding: 7px 10px;
 }
 
-.info_section .info_form form button {
+.info_section .info_form form button,
+.btn-login {
   padding: 8px 35px;
   outline: none;
   border: none;
